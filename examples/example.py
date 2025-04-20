@@ -74,4 +74,4 @@ def hello():
 
 if __name__ == "__main__":
     print("Starting FastPaze server...")
-    app.start(port=8000)
+    app.start()
