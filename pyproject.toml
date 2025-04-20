@@ -1,0 +1,16 @@
+[project]
+name = "fastpaze"
+version = "0.1.0"
+dependencies = [
+    "fastapi",
+    "flask",
+    "starlette",
+    "tornado",
+    "sanic",
+    "uvicorn",
+    "uv"
+]
+
+[build-system]
+requires = ["uv"]
+build-backend = "uv.build"
