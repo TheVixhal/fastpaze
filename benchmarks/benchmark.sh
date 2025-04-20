@@ -1,5 +1,5 @@
 #!/bin/bash
-
+npm install autocannon --save
 # Benchmark config
 TIME=1      # duration of each test (seconds)
 CONNECTIONS=5  # concurrent users
