@@ -7,6 +7,17 @@
 
 ---
 
+| **Rank** | **Framework** | **Avg Latency** | **Max Latency** | **Avg Req/Sec** | **Avg Bytes/Sec** |
+|:--------:|:--------------|:----------------|:----------------|:----------------|:------------------|
+| 🥇 1     | **FastPaze**   | 🟢 0.01 ms       | 18 ms            | 🟢 **28,600**     | **4.84 MB**         |
+| 🥈 2     | **Sanic**      | 🟢 0.01 ms       | 13 ms            | 🟢 **13,460**     | 1.7 MB             |
+| 🥉 3     | **Starlette**  | 🟡 0.1 ms        | 11 ms            | 5,330            | 847 kB             |
+| 4        | **FastAPI**    | 🟡 1.04 ms       | 21 ms            | 3,305            | 730 kB             |
+| 5        | **Tornado**    | 🔴 1.5 ms        | 22 ms            | 2,475            | 388 kB             |
+| 6        | **Flask**      | 🔴 12.2 ms       | 13 ms            | 🔻 **5**          | 885 B              |
+
+---
+
 ## ✨ Features
 
 - ⚡ **High Performance**: Built on Go’s `fasthttp`, capable of handling hundreds of thousands of RPS.
@@ -328,14 +339,25 @@ Benchmarks were run using [`autocannon`](https://github.com/mcollina/autocannon)
 autocannon -c 5 -d 1 -p http://localhost:PORT/hello
 ```
 
-| Framework     | Requests/sec | Latency (ms) | Throughput (MB/sec) |
-|---------------|--------------|--------------|----------------------|
-| **FastPaze** (Python + Go) | 🏆 **65,000** | 1.3 | 58.2 |
-| FastAPI       | 19,000       | 5.1          | 20.3                 |
-| Flask         | 8,500        | 11.2         | 10.1                 |
-| Starlette     | 18,000       | 5.5          | 19.8                 |
-| Sanic         | 21,000       | 4.6          | 22.4                 |
-| Tornado       | 13,000       | 6.8          | 15.1                 |
+### API Framework Benchmark Comparison (Sorted by Avg Req/Sec)
+
+| **Rank** | **Framework** | **Avg Latency** | **Max Latency** | **Avg Req/Sec** | **Avg Bytes/Sec** |
+|:--------:|:--------------|:----------------|:----------------|:----------------|:------------------|
+| 🥇 1     | **FastPaze**   | 🟢 0.01 ms       | 18 ms            | 🟢 **28,600**     | **4.84 MB**         |
+| 🥈 2     | **Sanic**      | 🟢 0.01 ms       | 13 ms            | 🟢 **13,460**     | 1.7 MB             |
+| 🥉 3     | **Starlette**  | 🟡 0.1 ms        | 11 ms            | 5,330            | 847 kB             |
+| 4        | **FastAPI**    | 🟡 1.04 ms       | 21 ms            | 3,305            | 730 kB             |
+| 5        | **Tornado**    | 🔴 1.5 ms        | 22 ms            | 2,475            | 388 kB             |
+| 6        | **Flask**      | 🔴 12.2 ms       | 13 ms            | 🔻 **5**          | 885 B              |
+
+> **Legend**:
+> - 🟢 Excellent latency/performance  
+> - 🟡 Moderate latency  
+> - 🔴 High latency  
+> - 🔻 Extremely low throughput
+
+📌 **Note**: Sorted by **Avg Req/Sec**, which represents the most critical throughput metric.
+
 
 
 > **Note**: All tests were run locally on a machine with AMD RYZEN 5, 8GB RAM. FastPaze outperforms other Python frameworks by leveraging Go's high-speed HTTP engine under the hood.
