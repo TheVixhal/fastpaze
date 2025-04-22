@@ -7,14 +7,7 @@
 
 ---
 
-| **Rank** | **Framework** | **Avg Latency** | **Max Latency** | **Avg Req/Sec** | **Avg Bytes/Sec** |
-|:--------:|:--------------|:----------------|:----------------|:----------------|:------------------|
-| 🥇 1     | **FastPaze**   | 🟢 0.01 ms       | 18 ms            | 🟢 **28,600**     | **4.84 MB**         |
-| 🥈 2     | **Sanic**      | 🟢 0.01 ms       | 13 ms            | 🟢 **13,460**     | 1.7 MB             |
-| 🥉 3     | **Starlette**  | 🟡 0.1 ms        | 11 ms            | 5,330            | 847 kB             |
-| 4        | **FastAPI**    | 🟡 1.04 ms       | 21 ms            | 3,305            | 730 kB             |
-| 5        | **Tornado**    | 🔴 1.5 ms        | 22 ms            | 2,475            | 388 kB             |
-| 6        | **Flask**      | 🔴 12.2 ms       | 13 ms            | 🔻 **5**          | 885 B              |
+<img src="https://i.ibb.co/h1TLrmQg/Screenshot-2025-04-22-144033.png" alt="Screenshot-2025-04-22-144033" border="0">
 
 ---
 
@@ -328,50 +321,6 @@ chmod +x benchmark.sh
 ./benchmark.sh
 ```
 
-
----
-
-## 🚀 Benchmark Results
-
-Benchmarks were run using [`autocannon`](https://github.com/mcollina/autocannon) with the default configuration:
-
-```bash
-autocannon -c 5 -d 1 -p http://localhost:PORT/hello
-```
-
-### API Framework Benchmark Comparison (Sorted by Avg Req/Sec)
-
-| **Rank** | **Framework** | **Avg Latency** | **Max Latency** | **Avg Req/Sec** | **Avg Bytes/Sec** |
-|:--------:|:--------------|:----------------|:----------------|:----------------|:------------------|
-| 🥇 1     | **FastPaze**   | 🟢 0.01 ms       | 18 ms            | 🟢 **28,600**     | **4.84 MB**         |
-| 🥈 2     | **Sanic**      | 🟢 0.01 ms       | 13 ms            | 🟢 **13,460**     | 1.7 MB             |
-| 🥉 3     | **Starlette**  | 🟡 0.1 ms        | 11 ms            | 5,330            | 847 kB             |
-| 4        | **FastAPI**    | 🟡 1.04 ms       | 21 ms            | 3,305            | 730 kB             |
-| 5        | **Tornado**    | 🔴 1.5 ms        | 22 ms            | 2,475            | 388 kB             |
-| 6        | **Flask**      | 🔴 12.2 ms       | 13 ms            | 🔻 **5**          | 885 B              |
-
-> **Legend**:
-> - 🟢 Excellent latency/performance  
-> - 🟡 Moderate latency  
-> - 🔴 High latency  
-> - 🔻 Extremely low throughput
-
-📌 **Note**: Sorted by **Avg Req/Sec**, which represents the most critical throughput metric.
-
-
-
-> **Note**: All tests were run locally on a machine with AMD RYZEN 5, 8GB RAM. FastPaze outperforms other Python frameworks by leveraging Go's high-speed HTTP engine under the hood.
-
----
-
----
-
-## 🧪 Example Output
-
-```
-$ curl http://localhost:9090/hello/world
-{"message": "Hello, world!"}
-```
 
 ---
 
